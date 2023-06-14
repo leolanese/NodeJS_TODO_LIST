@@ -15,7 +15,7 @@ const {createTask, updateTask, deleteTask, getSingleTask, getAllTasks} = require
 router.route('/').post(createTask);
 
 // A put request to the '/:id' route of the router. This route is used to update an existing task using the updateTask function from the controllers.
-// ':id' is a route parameter, allowing you to pass in an id to the route (e.g., /api/task/123).
+// ':id' is a route parameter, allowing you to pass in an id to the route (e.g., /api/tasks/123).
 router.route('/:id').put(updateTask);
 
 // A delete request to the '/:id' route of the router. This route is used to delete an existing task using the deleteTask function from the controllers.

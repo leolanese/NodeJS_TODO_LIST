@@ -30,17 +30,17 @@ exports.createTask = asyncHandler(async (req, res) => {
  */
 exports.updateTask = asyncHandler(async (req, res) => {
     const {task, active} = req.body;
-    const existTask = await Todo.findOne({_id : req.params.id});
-    if(existTask){
-        existTask.task = task;
-        existTask.active = active;
-        const updatedTask = await existTask.save();
+    const dataValue = await Todo.findOne({_id : req.params.id});
+    if (dataValue){
+        dataValue.task = task;
+        dataValue.active = active;
+        const updatedTask = await dataValue.save();
         res.status(200).json({
             success: true,
             data: updatedTask,
             message: 'Task is updated successfully'
         });
-    }else{
+    } else {
         res.status(404).json({
             success: false,
             data: null,
@@ -56,14 +56,14 @@ exports.updateTask = asyncHandler(async (req, res) => {
  * If the task is not found, an error message is returned.
  */
 exports.deleteTask = asyncHandler(async (req, res) => {
-    const existTask = await Todo.findOne({_id : req.params.id});
-    if(existTask){
-        await existTask.remove();
+    const dataValue = await Todo.findOne({_id : req.params.id});
+    if (dataValue){
+        await dataValue.remove();
         res.status(200).json({
             success: true,
             message: 'Task is deleted successfully'
         });
-    }else{
+     }else {
         res.status(404).json({
             success: false,
             data: null,
@@ -79,14 +79,14 @@ exports.deleteTask = asyncHandler(async (req, res) => {
  * If the task is not found, an error message is returned.
  */
 exports.getSingleTask = asyncHandler(async (req, res) => {
-    const existTask = await Todo.findOne({_id : req.params.id});
-    if(existTask){
+    const dataValue = await Todo.findOne({_id : req.params.id});
+    if (dataValue){
         res.status(200).json({
             success: true,
-            data: existTask,
+            data: dataValue,
             message: 'Task is fetched successfully'
         });
-    }else{
+    } else {
         res.status(404).json({
             success: false,
             data: null,

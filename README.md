@@ -18,6 +18,7 @@ npm i mongodb
 npm i mongoose
 ```
 
+---
 
 ## DB access
 
@@ -27,15 +28,15 @@ Copy from DataBase Access, edit user and use it into env
 
 You will only be able to connect to your cluster from the following list of IP Addresses
 
+![Mongodb Atlas Cluster]('/../imgs/mongodb-Atlas.jpg)
+
 ---
 
 ## Error connecting to MongoDB MongoServerError: bad auth : authentication failed
 
 The error bad auth: authentication failed is indicating that the MongoDB server was unable to authenticate the user with the provided credentials. This error can occur due to a few reasons: Incorrect credentials, privileges or Incorrect database
 
----
-
-## Connecting to server cluster
+### Connecting to server cluster
 
 ```js
 > npm run dev
@@ -60,3 +61,6 @@ YAY! API is running good
 
 ---
 
+## Testing API
+
+![PostMan API testing](./imgs/testing-API.jpg)
