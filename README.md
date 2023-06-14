@@ -14,17 +14,19 @@ npm i -D nodemon
 
 ```js
 npm i mongodb
+
+npm i mongoose
 ```
 
 ---
 
 ## DB access
 
-Copy from DaqtBase Access, edit user
+Copy from DataBase Access, edit user and use it into env
 
 ## IP Access List Entry
 
-> You will only be able to connect to your cluster from the following list of IP Addresses:
+You will only be able to connect to your cluster from the following list of IP Addresses
 
 ---
 
