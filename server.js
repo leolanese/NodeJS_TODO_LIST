@@ -40,7 +40,7 @@ if (process.env.MODE === 'development'){
 const PORT = process.env.PORT || 5000;
 
 // Use the 'todoRoute' for handling API requests under '/api/task'.
-//app.use('/api/task', todoRoute)
+app.use('/api/task', todoRoute)
 
 // Route for the root ('/') of the application. When this route is hit, it sends back a message.
 app.get('/', (req, res) => {

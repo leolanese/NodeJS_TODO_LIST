@@ -18,7 +18,6 @@ npm i mongodb
 npm i mongoose
 ```
 
----
 
 ## DB access
 
@@ -27,6 +26,37 @@ Copy from DataBase Access, edit user and use it into env
 ## IP Access List Entry
 
 You will only be able to connect to your cluster from the following list of IP Addresses
+
+---
+
+## Error connecting to MongoDB MongoServerError: bad auth : authentication failed
+
+The error bad auth: authentication failed is indicating that the MongoDB server was unable to authenticate the user with the provided credentials. This error can occur due to a few reasons: Incorrect credentials, privileges or Incorrect database
+
+---
+
+## Connecting to server cluster
+
+```js
+> npm run dev
+
+> nodejs_todo_list@1.0.0 dev
+> nodemon server
+
+[nodemon] 2.0.22
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Server is running on port: 5050
+MongoDB connected: ac-okc09tz-shard-00-02.ooedapl.mongodb.net
+...
+```
+
+```js
+// going to: localhost:5050
+YAY! API is running good
+```
 
 ---
 
