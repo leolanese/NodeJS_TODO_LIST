@@ -40,12 +40,12 @@ if (process.env.MODE === 'development'){
 const PORT = process.env.PORT || 5000;
 
 // Use the 'todoRoute' for handling API requests under '/api/task'.
-app.use('/api/task', todoRoute)
+app.use('/api/task', todoRoute);
 
 // Route for the root ('/') of the application. When this route is hit, it sends back a message.
 app.get('/', (req, res) => {
     res.send('YAY! API is running good')
-})
+});
 
 // Start the server and listen on the specified port. Log a message to console when server starts.
 app.listen(PORT, console.log(`Server is running on port: ${PORT}`.green.bold));

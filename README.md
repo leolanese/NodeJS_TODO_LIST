@@ -48,13 +48,13 @@ The error bad auth: authentication failed is indicating that the MongoDB server 
 [nodemon] watching path(s): *.*
 [nodemon] watching extensions: js,mjs,json
 [nodemon] starting `node server.js`
-Server is running on port: 5050
+Server is running on port: 5000
 MongoDB connected: ac-okc09tz-shard-00-02.ooedapl.mongodb.net
 ...
 ```
 
 ```js
-// going to: localhost:5050
+// going to: localhost:5000
 YAY! API is running good
 ```
 

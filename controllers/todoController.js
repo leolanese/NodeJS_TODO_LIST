@@ -1,7 +1,3 @@
-//This script provides the implementation for the task-related API endpoints. 
-//It uses functions from the Mongoose library to interact with the MongoDB database, and the 
-//express-async-handler library to handle any errors that occur during these operations. 
-
 // Importing mongoose for database operations.
 const mongoose = require('mongoose');
 
@@ -48,10 +44,11 @@ exports.updateTask = asyncHandler(async (req, res) => {
         res.status(404).json({
             success: false,
             data: null,
-            message: 'Task not found. Try again.'
+            message: 'Task not found'
         });
     }
 });
+
 
 /**
  * This function handles a DELETE request to remove an existing task.
@@ -70,10 +67,11 @@ exports.deleteTask = asyncHandler(async (req, res) => {
         res.status(404).json({
             success: false,
             data: null,
-            message: 'Task not found. Try again.'
+            message: 'Task not found'
         });
     }
 });
+
 
 /**
  * This function handles a GET request to retrieve a single task.
@@ -92,8 +90,30 @@ exports.getSingleTask = asyncHandler(async (req, res) => {
         res.status(404).json({
             success: false,
             data: null,
-            message: 'Task not found. Try again.'
+            message: 'Task not found'
         });
     }
 });
 
+
+/**
+ * This function handles a GET request to retrieve all tasks from the database.
+ * If tasks are found, they are returned in the response body along with a success message.
+ * If no tasks are found, an error message is returned.
+ */
+exports.getAllTasks = asyncHandler(async (req, res) => {
+    const allTasks = await Todo.find({});
+    if(allTasks.length){
+        res.status(200).json({
+            success: true,
+            data: allTasks,
+            message: 'All tasks are fetched successfully'
+        });
+    }else{
+        res.status(404).json({
+            success: false,
+            data: null,
+            message: 'Tasks not found'
+        });
+    }
+});
