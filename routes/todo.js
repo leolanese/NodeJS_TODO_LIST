@@ -1,4 +1,5 @@
-// This script sets up a router with routes for creating, updating, deleting, and retrieving tasks. The functions used to handle these requests are imported from the `todoController` file.
+// This script sets up a router with routes for creating, updating, deleting, and retrieving tasks. 
+// The functions used to handle these requests are imported from the `todoController` file
 
 // Importing the express module, which is a minimal and flexible Node.js web application framework.
 const express = require('express');
