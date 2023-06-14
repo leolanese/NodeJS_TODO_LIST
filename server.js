@@ -39,8 +39,8 @@ if (process.env.MODE === 'development'){
 // Set the port number for the server to listen on. Default is 5000 if not specified in the environment variables.
 const PORT = process.env.PORT || 5000;
 
-// Use the 'todoRoute' for handling API requests under '/api/tasks'.
-app.use('/api/tasks', todoRoute);
+// Use the 'todoRoute' for handling API requests under '/api/task'.
+app.use('/api/task', todoRoute);
 
 // Route for the root ('/') of the application. When this route is hit, it sends back a message.
 app.get('/', (req, res) => {

@@ -61,6 +61,21 @@ YAY! API is running good
 
 ---
 
-## Testing API
+## Testing API Requests/Responses
 
-![PostMan API testing](./imgs/testing-API.jpg)
+### Test POST
+
+![PostMan API POST testing](./imgs/testing-API.jpg)
+
+### Test PUT
+
+![Postman API PUT Testing](./imgs/put-postman-test.jpg)
+
+## Test GET
+
+![Postman API GET Testing](./imgs/mongodb-get.jpg)
+
+### Test DELETE
+
+![Postman API DELETE Testing](./imgs/mongodb-delete.jpg)
+

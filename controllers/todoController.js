@@ -30,17 +30,17 @@ exports.createTask = asyncHandler(async (req, res) => {
  */
 exports.updateTask = asyncHandler(async (req, res) => {
     const {task, active} = req.body;
-    const dataValue = await Todo.findOne({_id : req.params.id});
-    if (dataValue){
-        dataValue.task = task;
-        dataValue.active = active;
-        const updatedTask = await dataValue.save();
+    const existTask = await Todo.findOne({_id : req.params.id});
+    if(existTask){
+        existTask.task = task;
+        existTask.active = active;
+        const updatedTask = await existTask.save();
         res.status(200).json({
             success: true,
             data: updatedTask,
             message: 'Task is updated successfully'
         });
-    } else {
+    }else{
         res.status(404).json({
             success: false,
             data: null,
@@ -56,9 +56,10 @@ exports.updateTask = asyncHandler(async (req, res) => {
  * If the task is not found, an error message is returned.
  */
 exports.deleteTask = asyncHandler(async (req, res) => {
-    const dataValue = await Todo.findOne({_id : req.params.id});
-    if (dataValue){
-        await dataValue.remove();
+    const existTask = await Todo.findOne({_id : req.params.id});
+
+    if (!!existTask){
+        await Todo.deleteOne({_id: existTask._id});  
         res.status(200).json({
             success: true,
             message: 'Task is deleted successfully'
@@ -79,11 +80,12 @@ exports.deleteTask = asyncHandler(async (req, res) => {
  * If the task is not found, an error message is returned.
  */
 exports.getSingleTask = asyncHandler(async (req, res) => {
-    const dataValue = await Todo.findOne({_id : req.params.id});
-    if (dataValue){
+    const existTask = await Todo.findOne({_id : req.params.id});
+
+    if (!!existTask){
         res.status(200).json({
             success: true,
-            data: dataValue,
+            data: existTask,
             message: 'Task is fetched successfully'
         });
     } else {
