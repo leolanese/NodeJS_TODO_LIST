@@ -79,8 +79,6 @@ YAY! API is running good
 
 ![Postman API DELETE Testing](./imgs/mongodb-delete.jpg)
 
-
-
 ---
 ### :100: <i>Thanks!</i>
 #### Now, don't be an stranger. Let's stay in touch!
