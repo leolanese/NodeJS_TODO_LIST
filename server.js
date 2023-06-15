@@ -49,3 +49,4 @@ app.get('/', (req, res) => {
 
 // Start the server and listen on the specified port. Log a message to console when server starts.
 app.listen(PORT, console.log(`Server is running on port: ${PORT}`.green.bold));
+
